@@ -1,0 +1,67 @@
+.header{
+    background-color: $color-secondary;
+    grid-column: full-start/col-end 6;
+    
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem,min-content) 1fr;
+    row-gap: 2rem;
+    padding: 8rem;
+    padding-top: 4rem;
+    background-image: linear-gradient(rgba($color-secondary, 0.904),rgba($color-secondary, 0.904)),url(../img/hero.jpeg);
+    background-position: center;
+    background-size: cover;
+    
+    @media only screen and (max-width:$bp-medium){
+        grid-column: full-start/full-end;
+        
+    }
+
+    &-logo{
+        width: 14rem;
+        justify-self: center;
+    }
+
+    &-seenon{
+        font-size: 1.6rem;
+        color: $color-grey-light-1;
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        align-items: center;
+        column-gap: 2rem;
+
+        &::before,
+        &::after{
+            content: "";
+            height: 1px;
+            background-color: currentcolor;
+            display: block;
+    
+        }
+    }
+
+    &-btn{
+        justify-self: start;
+        align-self: start;
+    }
+
+    .seenon-logos{
+        display: grid;
+        column-gap: 4rem;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(4,1fr);
+        // justify-content: center;
+
+        // @media only screen and (max-width:$bp-small){
+        //    grid-template-columns: repeat(2,1fr);
+        //    row-gap: 3rem;
+        // }
+
+        .seenon-logo{
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+            justify-self: center;
+        }
+    }
+}

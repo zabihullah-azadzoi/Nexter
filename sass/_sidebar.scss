@@ -1,0 +1,45 @@
+.sidebar{
+    background-color: $color-primary-dark;
+    grid-column: side-start/side-end;
+    grid-row:1/-1;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width:$bp-large){
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &-button{
+        border: none;
+        background-color: white;
+        border-radius: none;
+        height: .2rem;
+        width: 4.5rem;
+        margin-top: 4rem;
+
+        @media only screen and (max-width:$bp-large){
+            margin-top: 0;
+            margin-right: 3rem;
+        }
+        
+
+        &::before,
+        &::after{
+            content: '';
+            height: .2rem;
+            width: 4.5rem;  
+            background-color: white;
+            display: block;
+        }
+        &::before{
+            transform: translateY(-1rem);
+        }
+        &::after{
+            transform: translateY(.8rem);
+        }
+
+    }
+}
